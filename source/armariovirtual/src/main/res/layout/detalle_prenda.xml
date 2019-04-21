@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/baseLayoutPrenda"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_detalle_prenda"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margen_bottom_titulo_pantalla"
+        android:gravity="center"
+        android:text="@string/titulo_detalle_prenda_editar"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_prenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/separacion_detalle_prenda" />
+
+    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imagen"
+        android:layout_width="@dimen/ancho_imagen_detalle_vestuario"
+        android:layout_height="@dimen/altura_imagen_detalle_vestuario"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/seleccionar_imagen"
+        app:layout_constraintEnd_toStartOf="@id/guideline_prenda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_detalle_prenda"
+        app:riv_corner_radius="15dip" />
+
+    <ImageButton
+        android:id="@+id/seleccionar_imagen"
+        android:layout_width="@dimen/boton_imagen"
+        android:layout_height="@dimen/boton_imagen"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="Seleccionar imagen"
+        android:scaleType="fitXY"
+        android:src="@drawable/galeria"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@+id/tomar_fotografia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagen"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageButton
+        android:id="@+id/tomar_fotografia"
+        android:layout_width="@dimen/boton_imagen"
+        android:layout_height="@dimen/boton_imagen"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="Tomar fotografía"
+        android:scaleType="fitXY"
+        android:src="@drawable/camara"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/seleccionar_imagen"
+        app:layout_constraintEnd_toStartOf="@id/guideline_prenda"
+        app:layout_constraintStart_toEndOf="@id/seleccionar_imagen" />
+
+    <ToggleButton
+        android:id="@+id/btn_favorito"
+        android:layout_width="@dimen/altura_boton_favorito"
+        android:layout_height="@dimen/ancho_boton_favorito"
+        android:layout_marginTop="@dimen/margen_bottom_titulo_pantalla"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:adjustViewBounds="true"
+        android:background="@drawable/boton_favorito"
+        android:checked="false"
+        android:contentDescription="Favorito"
+        android:scaleType="fitXY"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintStart_toStartOf="@+id/guideline_prenda"
+        app:layout_constraintTop_toBottomOf="@id/titulo_detalle_prenda" />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:hint="NOMBRE DE LA PRENDA"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@id/btn_favorito"
+        app:layout_constraintStart_toEndOf="@id/btn_favorito"
+        app:layout_constraintTop_toBottomOf="@id/titulo_detalle_prenda" />
+
+    <ListView
+        android:id="@+id/lista_clasificaciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/separacion_item_lista"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_cambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_prenda"
+        app:layout_constraintTop_toBottomOf="@id/nombre" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/guardar_cambios"
+        style="@style/Boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:text="@string/boton_guardar_cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/volver_btn"
+        app:layout_constraintTop_toBottomOf="@id/lista_clasificaciones" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/volver_btn"
+        style="@style/Boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:text="@string/boton_cancelar"
+        app:layout_constraintBaseline_toBaselineOf="@id/guardar_cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info"
+        app:layout_constraintLeft_toRightOf="@id/guardar_cambios" />
+
+</android.support.constraint.ConstraintLayout>

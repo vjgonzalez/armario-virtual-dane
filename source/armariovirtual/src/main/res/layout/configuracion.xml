@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayout_configuracion"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloConfiguracion"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_configuracion"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margen_botones_menu"
+        android:layout_marginRight="@dimen/margen_botones_menu"
+        app:layout_constraintBottom_toTopOf="@id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintTop_toBottomOf="@id/tituloConfiguracion">
+
+        <ar.uba.fi.armariovirtual.utils.BotonSombra
+            android:id="@+id/clasificaciones_btn"
+            style="@style/BotonMenuConfiguracion"
+            android:layout_width="@dimen/ancho_boton_configuracion"
+            android:layout_height="@dimen/alto_boton_configuracion"
+            android:drawableTop="@drawable/lista"
+            android:text="@string/boton_editar_clasificaciones"
+            app:buttonColor="@color/boton_color_wisteria"
+            app:cornerRadius="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cambio_pin_btn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowEnabled="false" />
+
+        <ar.uba.fi.armariovirtual.utils.BotonSombra
+            android:id="@+id/cambio_pin_btn"
+            style="@style/BotonMenuConfiguracion"
+            android:layout_width="@dimen/ancho_boton_configuracion"
+            android:layout_height="@dimen/alto_boton_configuracion"
+            android:drawableTop="@drawable/llave"
+            android:text="@string/boton_cambiar_pin"
+            app:buttonColor="@color/boton_color_wisteria"
+            app:cornerRadius="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/seguridad_btn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/clasificaciones_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowEnabled="false" />
+
+        <ar.uba.fi.armariovirtual.utils.BotonSombra
+            android:id="@+id/seguridad_btn"
+            style="@style/BotonMenuConfiguracion"
+            android:layout_width="@dimen/ancho_boton_configuracion"
+            android:layout_height="@dimen/alto_boton_configuracion"
+            android:drawableTop="@drawable/candado"
+            android:text="@string/boton_seguridad"
+            app:buttonColor="@color/boton_color_wisteria"
+            app:cornerRadius="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cambio_pin_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowEnabled="false" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <!-- TODO Para usar durante el desarrollo, borrar -->
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/ajustes_btn"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="*AJUSTES DESARROLLO*"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info"
+        app:layout_constraintLeft_toRightOf="@+id/btn_ayuda" />
+
+</android.support.constraint.ConstraintLayout>

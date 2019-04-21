@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/opcion"
+        style="@style/BotonOpcionQueMePongo"
+        android:layout_marginTop="@dimen/margen_vertical_boton"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginEnd="@dimen/margen_h_form"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

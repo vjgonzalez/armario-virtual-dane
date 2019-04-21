@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/armariovirtual/armariovirtual.iml" filepath="$PROJECT_DIR$/armariovirtual/armariovirtual.iml" />
+      <module fileurl="file://$PROJECT_DIR$/source.iml" filepath="$PROJECT_DIR$/source.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utilidadesdane/utilidadesdane.iml" filepath="$PROJECT_DIR$/utilidadesdane/utilidadesdane.iml" />
+    </modules>
+  </component>
+</project>

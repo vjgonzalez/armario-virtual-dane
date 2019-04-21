@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<cuestionario
+    xmlns="https://www.w3schools.com"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.w3schools.com cuestionario.xsd">
+
+
+    <pregunta texto="¿DÓNDE USARÍAS UNA CAMISA FORMAL?">
+        <respuestaCorrecta texto="EN UN CASAMIENTO" />
+        <respuestaInCorrecta texto="EN LA PLAYA" />
+        <respuestaInCorrecta texto="JUGANDO EN LA PLAZA" />
+        <respuestaInCorrecta texto="HACIENDO DEPORTE" />
+        <respuestaInCorrecta texto="DURMIENDO EN LA CAMA" />
+    </pregunta>
+
+    <pregunta texto="¿CON QUÉ ROPA CONVIENE HACER DEPORTE?">
+        <respuestaCorrecta texto="ROPA CÓMODA" />
+        <respuestaInCorrecta texto="VESTIDO" />
+        <respuestaInCorrecta texto="OJOTAS" />
+        <respuestaInCorrecta texto="DE TRAJE" />
+        <respuestaInCorrecta texto="ROPA DE DORMIR" />
+    </pregunta>
+
+</cuestionario>

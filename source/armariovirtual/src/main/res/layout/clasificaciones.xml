@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoEditarClasificaciones"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/baseLayoutClasific"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/titulo_clasificaciones"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_clasificaciones"
+        android:textSize="@dimen/titulo_chico"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/detalle_clasificacion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margen_v_form"
+        android:background="@drawable/rectangulo_blanco"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toTopOf="@+id/boton_guardar"
+        app:layout_constraintEnd_toStartOf="@+id/siguiente"
+        app:layout_constraintStart_toEndOf="@+id/anterior"
+        app:layout_constraintTop_toBottomOf="@id/titulo_clasificaciones">
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_clasificacion"
+            android:layout_marginRight="@dimen/margen_clasificacion"
+            android:gravity="center"
+            android:hint="@string/hint_nombre_clasificacion"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_clasificacion"
+            android:layout_marginRight="@dimen/margen_clasificacion"
+            android:gravity="center"
+            android:hint="@string/hint_pregunta_clasificacion"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/lista_opciones"
+            app:layout_constraintLeft_toLeftOf="@id/nombre"
+            app:layout_constraintRight_toRightOf="@id/nombre"
+            app:layout_constraintTop_toBottomOf="@id/nombre" />
+
+        <ListView
+            android:id="@+id/lista_opciones"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margen_vertical_boton"
+
+            android:divider="@android:color/transparent"
+            android:fillViewport="true"
+            android:scrollbarFadeDuration="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nueva_opcion"
+            app:layout_constraintStart_toStartOf="@id/pregunta"
+            app:layout_constraintTop_toBottomOf="@id/pregunta" />
+
+        <ImageButton
+            android:id="@+id/nueva_opcion"
+            android:layout_width="@dimen/altura_boton_evento_lista"
+            android:layout_height="@dimen/ancho_boton_evento_lista"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margen_v_form"
+            android:layout_marginLeft="@dimen/margen_h_form"
+            android:layout_marginRight="@dimen/margen_h_form"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/agregar_verde"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/nombre"
+            app:layout_constraintStart_toEndOf="@id/lista_opciones" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/borrar_clasificacion"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_h_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:drawableLeft="@drawable/borrar"
+        android:text="@string/boton_eliminar"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_guardar"
+        app:layout_constraintEnd_toStartOf="@+id/nueva_clasificacion"
+        app:layout_constraintTop_toTopOf="@+id/boton_guardar" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/nueva_clasificacion"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_h_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:drawableLeft="@drawable/agregar"
+        android:text="@string/boton_nueva"
+        app:layout_constraintBottom_toBottomOf="@+id/boton_guardar"
+        app:layout_constraintEnd_toStartOf="@+id/boton_guardar"
+        app:layout_constraintTop_toTopOf="@+id/boton_guardar" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/boton_guardar"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_h_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginTop="@dimen/margen_v_form"
+        android:drawableLeft="@drawable/guardar"
+        android:text="@string/boton_guardar_cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info" />
+
+    <ImageView
+        android:id="@+id/anterior"
+        android:layout_width="76dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/margen_h_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/anterior"
+        app:layout_constraintBottom_toBottomOf="@id/detalle_clasificacion"
+        app:layout_constraintEnd_toStartOf="@id/detalle_clasificacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/detalle_clasificacion" />
+
+    <ImageView
+        android:id="@+id/siguiente"
+        android:layout_width="76dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/margen_h_form"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/siguiente"
+        app:layout_constraintBottom_toBottomOf="@id/detalle_clasificacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detalle_clasificacion"
+        app:layout_constraintTop_toTopOf="@id/detalle_clasificacion" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutVestuario"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_filtros"
+        style="@style/BotonFiltro"
+        android:layout_margin="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="Filtro"
+        android:src="@drawable/filtro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/grilla_vestuario"
+        app:layout_constraintTop_toTopOf="@+id/grilla_vestuario" />
+
+    <Button
+        android:id="@+id/prendas_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/selector_vestuario"
+        android:elevation="10dp"
+        android:text="@string/vestuario_btn_prendas"
+        android:textSize="@dimen/texto_selector_vestuario"
+        app:layout_constraintEnd_toStartOf="@+id/conjuntos_btn"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_atras_config"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/conjuntos_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/selector_vestuario"
+        android:text="@string/vestuario_btn_conjuntos"
+        android:textSize="@dimen/texto_selector_vestuario"
+        app:layout_constraintEnd_toEndOf="@+id/grilla_vestuario"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/prendas_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_filtros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/separacion_lista_prendas" />
+
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grilla_vestuario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/contenedor_grilla_vestuario"
+        android:clipToPadding="true"
+        android:columnWidth="@dimen/vestuario_grilla_column_width"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nuevo_item"
+        app:layout_constraintStart_toEndOf="@id/btn_atras_config"
+        app:layout_constraintTop_toBottomOf="@+id/conjuntos_btn" />
+
+    <ImageButton
+        android:id="@+id/nuevo_item"
+        android:layout_width="@dimen/boton_redondo"
+        android:layout_height="@dimen/boton_redondo"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/boton_redondo"
+        android:src="@drawable/nuevo_elemento"
+        app:layout_constraintBottom_toTopOf="@id/btn_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/padding_boton_redondo"
+        android:scaleType="fitXY"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutAAVLeccion"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numero_pregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/borde_completo"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="none"
+        android:text="PREGUNTA X/Y"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pregunta"
+        style="@style/TextoSubtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TEXTO PREGUNTA"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero_pregunta" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/bloqueador"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="invisible" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/resultado_correcto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:background="#0026ff"
+            android:gravity="center"
+            android:lines="1"
+            android:text="CORRECTO"
+            android:textColor="#FFFFFF"
+            android:visibility="visible" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/resultado_incorrecto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:background="#0026ff"
+            android:gravity="center"
+            android:lines="1"
+            android:text="INTENTA NUEVAMENTE"
+            android:textColor="#FFFFFF" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cuestionario_completo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:background="#0026ff"
+            android:gravity="center"
+            android:lines="1"
+            android:text="CUESTIONARIO COMPLETO. ¡FELICITACIONES!"
+            android:textColor="#FFFFFF" />
+    </android.support.constraint.ConstraintLayout>
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/opciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/contenedor_grilla_aprendo_a_vestirme"
+        android:clipToPadding="true"
+        android:columnWidth="@dimen/aav_preguntas_grilla_column_width"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:paddingLeft="5dp"
+        android:paddingTop="@dimen/espacio_entre_items_grilla"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:scrollbarFadeDuration="0"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/espacio_entre_items_grilla"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintTop_toBottomOf="@+id/pregunta" />
+
+</android.support.constraint.ConstraintLayout>

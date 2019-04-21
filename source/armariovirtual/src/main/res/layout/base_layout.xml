@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="android.support.constraint.ConstraintLayout">
+
+    <ImageButton
+        android:id="@+id/btn_atras_config"
+        android:src="@drawable/base_atras"
+        style="@style/BotonEsquinaBase"
+        android:contentDescription="Atrás"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_sonido"
+        android:src="@drawable/base_sound_on"
+        style="@style/BotonEsquinaBase"
+        android:contentDescription="Sonido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_ayuda"
+        android:src="@drawable/base_ayuda"
+        style="@style/BotonEsquinaBase"
+        android:contentDescription="Ayuda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_info"
+        android:src="@drawable/base_info"
+        style="@style/BotonEsquinaBase"
+        android:contentDescription="Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</merge>

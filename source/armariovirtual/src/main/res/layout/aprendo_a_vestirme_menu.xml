@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutAAV"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloAAV"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_aprendo_vestirme"
+        app:layout_constraintLeft_toRightOf="@+id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@+id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grilla_lecciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/contenedor_grilla_aprendo_a_vestirme"
+        android:clipToPadding="true"
+        android:columnWidth="@dimen/aav_lecciones_grilla_column_width"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:paddingBottom="@dimen/espacio_entre_items_grilla"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="@dimen/espacio_entre_items_grilla"
+        android:scrollbarFadeDuration="0"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/espacio_entre_items_grilla"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintTop_toBottomOf="@+id/tituloAAV" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lecciones>
+
+    <leccion nombre="LECCIÓN 1" descripcion="ME VISTO EN ORDEN" icono="iconos_lecciones/icono_leccion_orden.png" cuestionario="cuestionario_orden">
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_orden_1.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_orden_2.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_orden_3.png"/>
+    </leccion>
+    <leccion nombre="LECCIÓN 2" descripcion="COMBINO COLORES" icono="iconos_lecciones/icono_leccion_colores.png" cuestionario="cuestionario_colores">
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_colores_1.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_colores_2.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_colores_3.png"/>
+    </leccion>
+    <leccion nombre="LECCIÓN 3" descripcion="PREPARO LA ROPA" icono="iconos_lecciones/icono_leccion_preparo_la_ropa.png" cuestionario="cuestionario_preparo_la_ropa">
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_preparo_la_ropa_1.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_preparo_la_ropa_2.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_preparo_la_ropa_3.png"/>
+    </leccion>
+    <leccion nombre="LECCIÓN 4" descripcion="ME VISTO PARA LA OCASIÓN" icono="iconos_lecciones/icono_leccion_ocasion.png" cuestionario="cuestionario_ocasion">
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_ocasion_1.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_ocasion_2.png"/>
+        <diapositiva rutaImagen="diapositivas_lecciones/diapo_ocasion_3.png"/>
+    </leccion>
+
+</lecciones>

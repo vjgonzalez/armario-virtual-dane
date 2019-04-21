@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+    <EditText
+        android:id="@+id/opcion"
+        android:layout_width="@dimen/ancho_opcion_clasificacion"
+        android:layout_height="wrap_content"
+        android:hint="OPCION"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/eliminar_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:tag="@string/tag_opcion"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        />
+
+    <ImageButton
+        android:id="@+id/eliminar_btn"
+        android:src="@drawable/eliminar"
+        android:layout_width="@dimen/ancho_boton_eliminar"
+        android:layout_height="@dimen/altura_boton_eliminar"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/opcion"
+        app:layout_constraintBottom_toBottomOf="@id/opcion"
+        app:layout_constraintStart_toEndOf="@id/opcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</android.support.constraint.ConstraintLayout>

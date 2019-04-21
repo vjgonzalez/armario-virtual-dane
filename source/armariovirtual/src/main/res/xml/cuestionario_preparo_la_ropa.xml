@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<cuestionario
+    xmlns="https://www.w3schools.com"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.w3schools.com cuestionario.xsd">
+    
+    <pregunta texto="¿CÓMO DEJAMOS UN CONJUNTO PREPARADO?">
+        <respuestaCorrecta  texto="LIMPIO Y PLANCHADO"/>
+        <respuestaInCorrecta texto="SUCIO"/>
+        <respuestaInCorrecta texto="DESORDENADO"/>
+        <respuestaInCorrecta texto="NO SABEMOS DÓNDE ESTÁ"/>
+        <respuestaInCorrecta texto="EN EL PISO"/>
+    </pregunta>
+
+</cuestionario>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/contenedor_item_lista">
+
+    <ImageView
+        android:id="@+id/conjunto_evento"
+        android:layout_width="@dimen/altura_imagen_evento_lista"
+        android:layout_height="@dimen/ancho_imagen_evento_lista"
+        android:layout_margin="@dimen/margen_evento_lista"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/margen_evento_lista"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nombre_evento"
+            style="@style/TextoListaEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hora_evento"
+            style="@style/TextoListaEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sub_texto_lista_eventos"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_editar"
+        android:src="@drawable/editar"
+        android:layout_width="@dimen/altura_boton_evento_lista"
+        android:layout_height="@dimen/ancho_boton_evento_lista"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:layout_marginRight="@dimen/margen_evento_lista"/>
+
+    <ImageButton
+        android:id="@+id/btn_eliminar"
+        android:src="@drawable/eliminar"
+        android:layout_width="@dimen/altura_boton_evento_lista"
+        android:layout_height="@dimen/ancho_boton_evento_lista"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/margen_evento_lista"
+        android:layout_marginRight="@dimen/margen_evento_lista"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/baseLayoutConjunto"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_detalle_conjunto"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="@string/titulo_detalle_conjunto_editar"
+        app:layout_constraintEnd_toStartOf="@+id/clasificaciones_btn"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grilla_vestuario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/contenedor_grilla_prendas_conjunto"
+        android:clipToPadding="true"
+        android:columnWidth="@dimen/vista_conjunto_ancho_prenda"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:numColumns="auto_fit"
+        android:padding="10sp"
+        android:scrollbarFadeDuration="0"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clasificaciones_btn"
+        app:layout_constraintLeft_toRightOf="@id/btn_ayuda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_conjunto" />
+
+    <ToggleButton
+        android:id="@+id/btn_favorito"
+        android:layout_width="@dimen/altura_boton_favorito"
+        android:layout_height="@dimen/ancho_boton_favorito"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/boton_favorito"
+        android:checked="false"
+        android:contentDescription="Favorito"
+        android:scaleType="fitXY"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintEnd_toStartOf="@+id/nombre_conjunto"
+        app:layout_constraintTop_toTopOf="@+id/nombre_conjunto" />
+
+    <EditText
+        android:id="@+id/nombre_conjunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:hint="NOMBRE DEL CONJUNTO"
+        android:inputType="text"
+        android:textSize="@dimen/texto_subtitulo_chico"
+        app:layout_constraintEnd_toStartOf="@+id/clasificaciones_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_detalle_conjunto" />
+
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/agregar_prenda_btn"
+        style="@style/Boton"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:drawableLeft="@drawable/agregar_transparente"
+        android:text="@string/boton_agregar_prenda"
+        app:buttonColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/nombre_conjunto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nombre_conjunto" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/clasificaciones_btn"
+        style="@style/Boton"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/boton_clasificaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agregar_prenda_btn" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/volver_btn"
+        style="@style/Boton"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/boton_cancelar"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_cambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guardar_cambios" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/guardar_cambios"
+        style="@style/Boton"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/boton_guardar_cambios"
+        app:layout_constraintBottom_toTopOf="@id/btn_info"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutProteccion"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_proteccion"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_seguridad"
+        app:layout_constraintBottom_toTopOf="@+id/descripcion"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        style="@style/TextoSubtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/subtitulo_seguridad"
+        android:layout_marginBottom="@dimen/margen_v_form"
+        app:layout_constraintBottom_toTopOf="@+id/lista_funcionalidades"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_proteccion" />
+
+    <ListView
+        android:id="@+id/lista_funcionalidades"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/separacion_item_lista"
+        android:fillViewport="true"
+        android:scrollbarFadeDuration="0"
+        app:layout_constraintBottom_toTopOf="@+id/btn_guardar"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintTop_toBottomOf="@id/descripcion" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/btn_guardar"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:text="@string/boton_guardar_cambios"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_cancelar"
+        app:layout_constraintRight_toLeftOf="@+id/btn_cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/btn_cancelar"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:text="@string/boton_cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info"
+        app:layout_constraintLeft_toRightOf="@+id/btn_guardar"/>
+
+</android.support.constraint.ConstraintLayout>

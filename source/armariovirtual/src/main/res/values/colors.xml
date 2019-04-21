@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FCC058</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#8E5572</color>
+
+    <color name="colorBotonSeleccionado">@color/colorAccent</color>
+    <color name="colorBotonNoSeleccionado">#bdc3c7</color>
+
+    <color name="texto_item_lista">#000000</color>
+
+    <color name="colorFondoPantalla">#FCFAFC</color>
+    <color name="colorPanelFiltros">#1abc9c</color>
+    <color name="colorTextoTitulo">#0E0F11</color>
+    <color name="colorExteriorPopup">#990E0F11</color>
+    <color name="colorFondoPopupFiltro">#FCFAFC</color>
+    <color name="colorBordePopupFiltro">#FCC058</color>
+
+    <color name="colorBordeGrillaVestuario">#FCC058</color>
+    <color name="colorFondoGrillaVestuario">#8E5572</color>
+
+    <color name="colorBordeImagenDetalleVestuario">#8E5572</color>
+
+    <color name="botonNuevoElementoFondo">#FCC058</color>
+
+    <color name="fondo_item_lista">#ffffff</color>
+    <color name="borde_item_lista">#000000</color>
+
+    <color name="colorFondoBotonPadre">#FCC058</color>
+    <color name="colorTextoBotonPadre">#FCFAFC</color>
+
+    <color name="colorBotonFiltro">#3F51B5</color>
+    <color name="colorFondoOpcionQueMePongo">@color/colorAccent</color>
+
+    <color name="colorIconoBase">#0E0F11</color>
+    <color name="colorIconoBasePresionado">#153154</color>
+    <color name="colorIconoBaseActivado">#153154</color>
+
+
+    <color name="colorFondoEditarClasificaciones">#8fb8de</color>
+
+    <color name="colorFondoImagenCombinadaConjunto">#FCFAFC</color>
+
+    <!--Botones-->
+    <color name="boton_default_color">#3eadeb</color>
+    <color name="boton_default_shadow_color">#ff3493c8</color>
+    <color name="boton_color_wisteria">#8e44ad</color>
+
+</resources>

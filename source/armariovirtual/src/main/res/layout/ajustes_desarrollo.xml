@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayout_ajustes"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tituloAjustes"
+        style="@style/TextoTituloMenuPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="AJUSTES"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btn_ayuda"
+        app:layout_constraintRight_toLeftOf="@+id/btn_info"
+        app:layout_constraintTop_toBottomOf="@id/tituloAjustes">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/dump_db_btn"
+                style="@style/BotonMenu"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="DUMP BD"
+                app:layout_constraintBottom_toTopOf="@+id/empty_db_btn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/empty_db_btn"
+                style="@style/BotonMenu"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="EMPTY BD"
+                app:layout_constraintBottom_toTopOf="@+id/sanitizar_db_btn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dump_db_btn"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/sanitizar_db_btn"
+                style="@style/BotonMenu"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="SANITIZE BD"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empty_db_btn"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/crear_datos_por_defecto_btn"
+                style="@style/BotonMenu"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="CREAR DATOS"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sanitizar_db_btn"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

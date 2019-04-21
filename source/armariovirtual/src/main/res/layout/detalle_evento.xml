@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/baseLayoutEvento"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_detalle_evento"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_detalle_evento_editar"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/form"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_detalle_evento">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_izq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/separacion_form_evento_izq" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_der"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/separacion_form_evento_der" />
+
+            <TextView
+                android:id="@+id/label_nombre"
+                style="@style/TextoEtiquetaFormulario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:text="NOMBRE"
+                app:layout_constraintBaseline_toBaselineOf="@+id/nombre_evento"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_izq"
+                app:layout_constraintHorizontal_bias="100"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <EditText
+                android:id="@+id/nombre_evento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:layout_marginRight="@dimen/margen_h_form"
+                android:hint="@string/hint_nombre_evento"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_der"
+                app:layout_constraintStart_toStartOf="@+id/guideline_izq"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label_fecha"
+                style="@style/TextoEtiquetaFormulario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:text="FECHA"
+                app:layout_constraintBaseline_toBaselineOf="@+id/fecha_evento"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_izq"
+                app:layout_constraintHorizontal_bias="100"
+                app:layout_constraintLeft_toLeftOf="@+id/label_nombre" />
+
+            <EditText
+                android:id="@+id/fecha_evento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:layout_marginRight="@dimen/margen_h_form"
+                android:clickable="true"
+                android:focusable="false"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_der"
+                app:layout_constraintStart_toStartOf="@+id/guideline_izq"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_evento" />
+
+            <TextView
+                android:id="@+id/label_hora"
+                style="@style/TextoEtiquetaFormulario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:text="HORA"
+                app:layout_constraintBottom_toBottomOf="@+id/hora_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_izq"
+                app:layout_constraintHorizontal_bias="100"
+                app:layout_constraintLeft_toLeftOf="@+id/label_nombre" />
+
+            <Spinner
+                android:id="@+id/hora_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:layout_marginRight="@dimen/margen_h_form"
+                android:text="Hora"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_der"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/guideline_izq"
+                app:layout_constraintTop_toBottomOf="@+id/fecha_evento" />
+
+            <ImageView
+                android:id="@+id/img_notification"
+                android:layout_width="@dimen/boton_base_layout"
+                android:layout_height="@dimen/boton_base_layout"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Notificacion"
+                android:scaleType="fitXY"
+                android:src="@drawable/notificacion"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_izq"
+                app:layout_constraintHorizontal_bias="100"
+                app:layout_constraintLeft_toLeftOf="@+id/label_nombre"
+                app:layout_constraintTop_toBottomOf="@+id/hora_spinner" />
+
+            <TextView
+                android:id="@+id/txt_notificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginRight="@dimen/margen_h_form"
+                android:text="@string/evento_sin_notificacion"
+                app:layout_constraintBottom_toBottomOf="@id/img_notification"
+                app:layout_constraintEnd_toStartOf="@+id/btn_notificacion"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/guideline_izq" />
+
+            <ImageButton
+                android:id="@+id/btn_eliminar_notificacion"
+                android:layout_width="@dimen/icono_evento"
+                android:layout_height="@dimen/icono_evento"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Eliminar notificacion"
+                android:scaleType="fitXY"
+                android:src="@drawable/eliminar"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/txt_notificacion"
+                app:layout_constraintEnd_toEndOf="@id/nombre_evento"
+                app:layout_constraintHorizontal_bias="100" />
+
+            <ImageButton
+                android:id="@+id/btn_notificacion"
+                android:layout_width="@dimen/icono_evento"
+                android:layout_height="@dimen/icono_evento"
+                android:layout_marginLeft="@dimen/margen_h_form"
+                android:layout_marginTop="@dimen/margen_v_form"
+                android:layout_marginRight="@dimen/margen_h_form"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/editar"
+                app:layout_constraintBottom_toBottomOf="@id/txt_notificacion"
+                app:layout_constraintEnd_toStartOf="@id/btn_eliminar_notificacion"
+                app:layout_constraintHorizontal_bias="0" />
+
+            <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imagen_conjunto"
+                android:layout_width="@dimen/altura_imagen_conjunto_evento"
+                android:layout_height="@dimen/ancho_imagen_conjunto_evento"
+                android:background="@android:color/white"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/guideline_der"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_border_color="#333333"
+                app:riv_border_width="3dip"
+                app:riv_corner_radius="15dip"
+                app:riv_mutate_background="true"
+                app:riv_oval="false"
+                app:riv_tile_mode="repeat" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/boton_conjunto"
+                style="@style/Boton"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_cambiar_conjunto"
+                app:buttonColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="@id/imagen_conjunto"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/imagen_conjunto"
+                app:layout_constraintTop_toBottomOf="@id/imagen_conjunto" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/boton_guardar"
+        style="@style/Boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:text="@string/boton_guardar_cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/boton_cancelar"
+        app:layout_constraintTop_toBottomOf="@id/form" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/boton_cancelar"
+        style="@style/Boton"
+        android:layout_marginRight="@dimen/margen_h_form"
+        android:layout_marginBottom="@dimen/margen_vertical_boton"
+        android:text="@string/boton_cancelar"
+        app:layout_constraintBaseline_toBaselineOf="@id/boton_guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info"
+        app:layout_constraintLeft_toRightOf="@+id/boton_guardar" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,159 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="altura_boton">50dp</dimen>
+    <dimen name="ancho_boton">160dp</dimen>
+    <dimen name="margen_vertical_boton">8dp</dimen>
+    <dimen name="margen_horizontal_boton">5dp</dimen>
+
+    <dimen name="altura_imagen_evento_lista">80dp</dimen>
+    <dimen name="ancho_imagen_evento_lista">80dp</dimen>
+    <dimen name="altura_boton_evento_lista">25dp</dimen>
+    <dimen name="ancho_boton_evento_lista">25dp</dimen>
+    <dimen name="texto_lista_eventos">20dp</dimen>
+    <dimen name="sub_texto_lista_eventos">10dp</dimen>
+    <dimen name="margen_evento_lista">4dp</dimen>
+    <dimen name="ancho_borde_item_lista">1dp</dimen>
+    <dimen name="corner_item_lista">15dp</dimen>
+    <dimen name="separacion_item_lista">8.0dp</dimen>
+
+    <dimen name="separacion_detalle_prenda">200dp</dimen>
+    <dimen name="ancho_imagen_detalle_vestuario">180dp</dimen>
+    <dimen name="altura_imagen_detalle_vestuario">180dp</dimen>
+    <dimen name="altura_boton_favorito">25dp</dimen>
+    <dimen name="ancho_boton_favorito">25dp</dimen>
+
+    <dimen name="separacion_detalle_conjunto">230dp</dimen>
+    <dimen name="altura_imagen_prenda_de_conjunto">80dp</dimen>
+    <dimen name="ancho_imagen_prenda_de_conjunto">80dp</dimen>
+    <dimen name="altura_boton_prenda_de_conjunto">25dp</dimen>
+    <dimen name="ancho_boton_prenda_de_conjunto">25dp</dimen>
+
+    <dimen name="texto_general">18dp</dimen>
+
+    <!--Calendario y eventos -->
+    <dimen name="margen_calendario">25dp</dimen>
+    <dimen name="icono_evento">25dp</dimen>
+
+    <dimen name="boton_base_layout">28dp</dimen>
+    <dimen name="boton_base_layout_margen">5dp</dimen>
+
+    <dimen name="boton_filtro_layout">35dp</dimen>
+
+    <dimen name="titulo_pantalla">45dp</dimen>
+    <dimen name="titulo_secundario">30dp</dimen>
+    <dimen name="titulo_chico">25dp</dimen>
+    <dimen name="texto_subtitulo_chico">15dp</dimen>
+    <dimen name="texto_subtitulo">20dp</dimen>
+
+    <dimen name="texto_pregunta">25dp</dimen>
+
+    <dimen name="boton_imagen">50dp</dimen>
+
+    <dimen name="texto_selector_vestuario">20dp</dimen>
+    <dimen name="separacion_lista_prendas">170dp</dimen>
+    <dimen name="titulo_panel_filtros">20dp</dimen>
+    <dimen name="texto_clasificacion_filtros">18dp</dimen>
+    <dimen name="margen_vestuario">8dp</dimen>
+
+    <dimen name="margen_popup_h">60dp</dimen>
+    <dimen name="margen_popup_v">30dp</dimen>
+
+    <dimen name="margen_top_titulo_pantalla">5dp</dimen>
+    <dimen name="margen_bottom_titulo_pantalla">2dp</dimen>
+
+    <dimen name="margen_top_pregunta">10dp</dimen>
+    <dimen name="margen_bottom_pregunta">12dp</dimen>
+
+    <dimen name="vista_conjunto_ancho_prenda">180dp</dimen>
+    <dimen name="vista_conjunto_alto_prenda">160dp</dimen>
+    <dimen name="vista_conjunto_alto_texto">42dp</dimen>
+
+    <dimen name="qmp_resultado_conjunto_ancho">180dp</dimen>
+    <dimen name="qmp_resultado_conjunto_alto">160dp</dimen>
+    <dimen name="qmp_resultado_conjunto_alto_texto">42dp</dimen>
+
+    <dimen name="margen_top_cuerpo_activity">10dp</dimen>
+
+    <dimen name="texto_opcion_qmp">18dp</dimen>
+
+    <dimen name="ancho_opcion_qmp">190dp</dimen>
+    <dimen name="alto_opcion_qmp">80dp</dimen>
+
+    <dimen name="ancho_resultado_qmp">145dp</dimen>
+    <dimen name="alto_resultado_qmp">145dp</dimen>
+
+    <dimen name="separacion_form_evento_izq">90dp</dimen>
+    <dimen name="separacion_form_evento_der">220dp</dimen>
+
+    <dimen name="altura_imagen_conjunto_evento">155dp</dimen>
+    <dimen name="ancho_imagen_conjunto_evento">135dp</dimen>
+
+    <dimen name="texto_etiqueta_form">15dp</dimen>
+    <dimen name="margen_h_form">16dp</dimen>
+    <dimen name="margen_v_form">8dp</dimen>
+
+    <dimen name="boton_padding">8dp</dimen>
+    <dimen name="boton_menu_padding_right">10dp</dimen>
+    <dimen name="boton_menu_padding_left">10dp</dimen>
+    <dimen name="margen_botones_menu">15dp</dimen>
+    <dimen name="texto_botones_menu">15dp</dimen>
+    <dimen name="texto_botones_menu_config">15dp</dimen>
+
+    <dimen name="alto_boton_mediano">70dp</dimen>
+    <dimen name="ancho_boton_mediano">160dp</dimen>
+    <dimen name="texto_boton_mediano">25dp</dimen>
+
+    <dimen name="alto_boton_chato">50dp</dimen>
+    <dimen name="ancho_boton_chato">170dp</dimen>
+    <dimen name="texto_boton_chato">22dp</dimen>
+
+    <dimen name="min_ancho_boton_menu">140dp</dimen>
+    <dimen name="ancho_boton_menu_principal">185dp</dimen>
+    <dimen name="alto_boton_menu_principal">100dp</dimen>
+
+    <dimen name="alto_boton_form">30dp</dimen>
+    <dimen name="ancho_boton_form">100dp</dimen>
+
+    <dimen name="ancho_boton_configuracion">155dp</dimen>
+    <dimen name="alto_boton_configuracion">120dp</dimen>
+
+    <dimen name="texto_boton">16dp</dimen>
+
+    <!-- Pantalla Configuracion -->
+    <dimen name="ancho_opcion_clasificacion">200dp</dimen>
+    <dimen name="margen_clasificacion">20dp</dimen>
+    <dimen name="altura_boton_eliminar">20dp</dimen>
+    <dimen name="ancho_boton_eliminar">20dp</dimen>
+
+    <!-- Dimensiones de BotonSombra -->
+    <dimen name="fbutton_default_conner_radius">8dp</dimen>
+    <dimen name="fbutton_default_shadow_height">4dp</dimen>
+
+    <dimen name="vestuario_grilla_column_width">165dp</dimen>
+
+    <dimen name="espacio_entre_items_grilla">10dp</dimen>
+
+    <dimen name="aav_lecciones_grilla_column_width">180dp</dimen>
+
+    <!-- Aprendo A Vestirme -->
+    <dimen name="texto_lista_lecciones_nombre">20dp</dimen>
+    <dimen name="texto_lista_lecciones_descripcion">20dp</dimen>
+    <dimen name="aav_ancho_leccion_item_grilla">140dp</dimen>
+    <dimen name="aav_leccion_item_grilla_alto_nombre">30dp</dimen>
+    <dimen name="aav_leccion_item_grilla_alto_descripcion">30dp</dimen>
+    <dimen name="aav_ancho_imagen_leccion_item_grilla">125dp</dimen>
+    <dimen name="aav_alto_imagen_leccion_item_grilla">125dp</dimen>
+    <dimen name="aav_ancho_boton_sig_leccion">50dp</dimen>
+    <dimen name="aav_alto_boton_sig_leccion">50dp</dimen>
+    <dimen name="aav_margen_horizontal_boton_sig_leccion">25dp</dimen>
+    <dimen name="aav_texto_pregunta">25dp</dimen>
+    <dimen name="aav_alto_opcion">45dp</dimen>
+    <dimen name="aav_ancho_opcion">140dp</dimen>
+    <dimen name="aav_preguntas_grilla_column_width">180dp</dimen>
+    <dimen name="aav_texto_opciones">18dp</dimen>
+
+    <dimen name="boton_redondo">60dp</dimen>
+    <dimen name="padding_boton_redondo">10dp</dimen>
+</resources>

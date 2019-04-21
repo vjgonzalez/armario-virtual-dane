@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutAAVLeccion"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nombre"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="NOMBRE DE LA LECCIÓN"
+        app:layout_constraintLeft_toRightOf="@+id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@+id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        style="@style/TextoSubtitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="DESCRIPCIÓN DE LA LECCIÓN"
+        app:layout_constraintLeft_toRightOf="@+id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@+id/btn_sonido"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/diapositiva"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/continuar_btn"
+        app:layout_constraintEnd_toStartOf="@+id/diapositiva_siguiente_btn"
+        app:layout_constraintStart_toEndOf="@+id/diapositiva_anterior_btn"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion"
+        app:riv_corner_radius="15dip" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/diapositiva_anterior_btn"
+        style="@style/Boton"
+        android:layout_width="@dimen/aav_ancho_boton_sig_leccion"
+        android:layout_height="@dimen/aav_alto_boton_sig_leccion"
+        android:layout_marginLeft="@dimen/aav_margen_horizontal_boton_sig_leccion"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/aav_margen_horizontal_boton_sig_leccion"
+        android:text="&lt;"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/diapositiva"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/diapositiva" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/diapositiva_siguiente_btn"
+        style="@style/Boton"
+        android:layout_width="@dimen/aav_ancho_boton_sig_leccion"
+        android:layout_height="@dimen/aav_alto_boton_sig_leccion"
+        android:layout_marginLeft="@dimen/aav_margen_horizontal_boton_sig_leccion"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/aav_margen_horizontal_boton_sig_leccion"
+        android:layout_marginBottom="8dp"
+        android:text="&gt;"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/diapositiva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/diapositiva" />
+
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/continuar_btn"
+        style="@style/Boton"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TERMINAR LECCIÓN"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

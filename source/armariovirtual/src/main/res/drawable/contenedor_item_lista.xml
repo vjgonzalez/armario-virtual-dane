@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <!-- view background color -->
+    <solid android:color="@color/fondo_item_lista" >
+    </solid>
+
+    <!-- view border color and width -->
+    <stroke
+        android:width="@dimen/ancho_borde_item_lista"
+        android:color="@color/borde_item_lista" >
+    </stroke>
+
+    <!-- Here is the corner radius -->
+    <corners android:radius="@dimen/corner_item_lista" >
+    </corners>
+
+</shape>

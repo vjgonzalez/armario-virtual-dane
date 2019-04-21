@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutMenu"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloMenu"
+        style="@style/TextoTituloMenuPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_menu"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_ayuda"
+            app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+            app:layout_constraintEnd_toStartOf="@id/btn_info"
+            app:layout_constraintTop_toBottomOf="@id/tituloMenu"
+            android:layout_marginLeft="@dimen/margen_botones_menu"
+            android:layout_marginRight="@dimen/margen_botones_menu">
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineVertical"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guidelineHorizontal"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/aprendo_a_vestirme_btn"
+                style="@style/BotonMenu"
+                android:drawableTop="@drawable/que_me_pongo"
+                android:text="@string/boton_aprendo"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+                app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/vestuario_btn"
+                style="@style/BotonMenu"
+                android:drawableTop="@drawable/vestuario"
+                android:text="@string/boton_vestuario"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guidelineVertical"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/que_me_pongo_btn"
+                style="@style/BotonMenu"
+                android:drawableTop="@drawable/que_me_pongo"
+                android:text="@string/boton_que_pongo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guidelineHorizontal" />
+
+            <ar.uba.fi.armariovirtual.utils.BotonSombra
+                android:id="@+id/calendario_btn"
+                style="@style/BotonMenu"
+                android:drawableTop="@drawable/calendario"
+                android:text="@string/boton_calendario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guidelineVertical"
+                app:layout_constraintTop_toTopOf="@id/guidelineHorizontal" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

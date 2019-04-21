@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<cuestionario
+    xmlns="https://www.w3schools.com"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.w3schools.com cuestionario.xsd">
+    
+    <pregunta texto="¿QUÉ COLOR COMBINA CON TODO?">
+        <respuestaCorrecta  texto="NEGRO"/>
+        <respuestaInCorrecta texto="ROJO"/>
+        <respuestaInCorrecta texto="AMARILLO"/>
+        <respuestaInCorrecta texto="VERDE"/>
+        <respuestaInCorrecta texto="AZUL"/>
+    </pregunta>
+
+</cuestionario>

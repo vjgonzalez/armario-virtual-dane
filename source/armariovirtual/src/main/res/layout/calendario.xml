@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutCalendario"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloCalendario"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_calendario"
+        android:textSize="@dimen/titulo_chico"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textoCalendario" />
+
+    <TextView
+        android:id="@+id/textoCalendario"
+        style="@style/TextoSubtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/texto_calendario"
+        android:textSize="@dimen/texto_subtitulo_chico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCalendario"
+        app:layout_constraintBottom_toTopOf="@+id/calendario_view"/>
+
+    <ar.uba.fi.utilidadesdane.calendario.CalendarioView
+        android:id="@+id/calendario_view"
+        android:tag="calendarioView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margen_calendario"
+        android:layout_marginRight="@dimen/margen_calendario"
+        app:layout_constraintBottom_toTopOf="@id/btn_ayuda"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintTop_toBottomOf="@id/textoCalendario"
+        />
+</android.support.constraint.ConstraintLayout>

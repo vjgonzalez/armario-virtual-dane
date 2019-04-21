@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- base set of styles that apply to all versions -->
+    <style name="BaseAppTheme" parent="Base.Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <!-- declare the theme name that's actually applied in the manifest file -->
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:textSize">@dimen/texto_general</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="BotonPadre" parent="Base.Widget.AppCompat.Button">
+        <item name="android:minHeight">50dp</item>
+        <item name="buttonColor">@color/colorFondoBotonPadre</item>
+        <item name="android:textColor">@color/colorTextoBotonPadre</item>
+        <item name="shadowEnabled">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/margen_vertical_boton</item>
+        <item name="android:layout_marginBottom">@dimen/margen_vertical_boton</item>
+    </style>
+
+    <style name="Boton" parent="BotonPadre">
+        <item name="android:minWidth">140dp</item>
+        <item name="android:textSize">@dimen/texto_boton</item>
+        <item name="android:layout_height">@dimen/altura_boton</item>
+        <item name="android:layout_width">@dimen/ancho_boton</item>
+        <item name="android:layout_marginLeft">@dimen/margen_horizontal_boton</item>
+        <item name="android:layout_marginRight">@dimen/margen_horizontal_boton</item>
+        <item name="android:paddingLeft">@dimen/boton_menu_padding_left</item>
+        <item name="android:paddingRight">@dimen/boton_menu_padding_right</item>
+    </style>
+
+    <style name="BotonMenu" parent="BotonPadre">
+        <item name="android:minWidth">@dimen/min_ancho_boton_menu</item>
+        <item name="android:layout_height">@dimen/alto_boton_menu_principal</item>
+        <item name="android:layout_width">@dimen/ancho_boton_menu_principal</item>
+        <item name="android:textSize">@dimen/texto_botones_menu</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">@dimen/boton_padding</item>
+        <item name="android:paddingBottom">@dimen/boton_padding</item>
+        <item name="android:paddingLeft">@dimen/boton_menu_padding_left</item>
+        <item name="android:paddingRight">@dimen/boton_menu_padding_right</item>
+    </style>
+
+    <style name="BotonMediano" parent="BotonMenu">
+        <item name="android:textSize">@dimen/texto_boton_mediano</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">@dimen/alto_boton_mediano</item>
+        <item name="android:layout_width">@dimen/ancho_boton_mediano</item>
+        <item name="android:layout_marginBottom">@dimen/margen_vertical_boton</item>
+        <item name="android:layout_marginTop">@dimen/margen_vertical_boton</item>
+    </style>
+
+    <style name="BotonChato" parent="BotonMediano">
+        <item name="android:textSize">@dimen/texto_boton_chato</item>
+        <item name="android:layout_height">@dimen/alto_boton_chato</item>
+        <item name="android:layout_width">@dimen/ancho_boton_chato</item>
+    </style>
+
+    <style name="BotonMenuConfiguracion" parent="BotonMenu">
+        <item name="android:textSize">@dimen/texto_botones_menu_config</item>
+    </style>
+
+    <style name="BotonOpcionQueMePongo" parent="BotonPadre">
+        <item name="android:layout_height">@dimen/alto_opcion_qmp</item>
+        <item name="android:layout_width">@dimen/ancho_opcion_qmp</item>
+        <item name="android:textSize">@dimen/texto_opcion_qmp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="buttonColor">@color/colorFondoOpcionQueMePongo</item>
+    </style>
+
+    <style name="TextoTituloMenuPrincipal">
+        <item name="android:textColorPrimary">@color/colorTextoTitulo</item>
+        <item name="android:textSize">@dimen/titulo_pantalla</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/margen_bottom_titulo_pantalla</item>
+        <item name="android:layout_marginTop">@dimen/margen_top_titulo_pantalla</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="TextoTitulo">
+        <item name="android:textSize">@dimen/titulo_secundario</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColorPrimary">@color/colorTextoTitulo</item>
+        <item name="android:layout_marginBottom">@dimen/margen_bottom_pregunta</item>
+        <item name="android:layout_marginTop">@dimen/margen_top_pregunta</item>
+    </style>
+
+    <style name="BotonEsquinaBase">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">@dimen/boton_base_layout</item>
+        <item name="android:layout_height">@dimen/boton_base_layout</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:tint">@color/colorIconoBase</item>
+        <item name="android:layout_margin">@dimen/boton_base_layout_margen</item>
+    </style>
+
+    <style name="BotonFiltro">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">@dimen/boton_base_layout</item>
+        <item name="android:layout_height">@dimen/boton_base_layout</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:tint">@color/colorBotonFiltro</item>
+        <item name="android:layout_margin">@dimen/boton_base_layout_margen</item>
+    </style>
+
+    <style name="TextoSubtitulo">
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textSize">@dimen/texto_subtitulo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/margen_bottom_titulo_pantalla</item>
+        <item name="android:layout_marginTop">@dimen/margen_top_titulo_pantalla</item>
+    </style>
+
+
+    <style name="TextoPregunta">
+        <item name="android:textSize">@dimen/texto_pregunta</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColorPrimary">@color/colorTextoTitulo</item>
+        <item name="android:layout_marginBottom">@dimen/margen_bottom_pregunta</item>
+        <item name="android:layout_marginTop">@dimen/margen_top_pregunta</item>
+    </style>
+
+    <style name="TextoListaEvento">
+        <item name="android:textSize">@dimen/texto_lista_eventos</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">@color/texto_item_lista</item>
+    </style>
+
+    <style name="TextoEtiquetaFormulario">
+        <item name="android:textSize">@dimen/texto_etiqueta_form</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DivisionHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="DivisionVertical">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="TextoListaLeccionNombre">
+        <item name="android:textSize">@dimen/texto_lista_lecciones_nombre</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">@color/texto_item_lista</item>
+    </style>
+
+    <style name="TextoListaLeccionDescripcion">
+        <item name="android:textSize">@dimen/texto_lista_lecciones_descripcion</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">@color/texto_item_lista</item>
+    </style>
+
+</resources>

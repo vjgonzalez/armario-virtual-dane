@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ar.uba.fi.armariovirtual">
+
+    <application
+        tools:replace="name"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="app.ArmarioVirtualApplication">
+
+        <activity android:name=".activities.MenuPrincipalActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter android:label="Armario Virtual">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.ListadoPrendasActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.DetallePrendaActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.ListadoConjuntosActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.DetalleConjuntoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.SeleccionarConjuntoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.SeleccionarPrendaActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.calendario.CalendarioActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.calendario.DetalleFechaActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.calendario.DetalleEventoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.AyudaActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.InfoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.ConfiguracionActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.AjustesDesarrolloActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.EditarClasificacionesActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.EditarProteccionActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.quemepongo.QueMePongoIntroduccionActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.quemepongo.QueMePongoPreguntasActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.quemepongo.QueMePongoResultadoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.VistaConjuntoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.aprendoavestirme.AprendoAVestirmeMenuActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.aprendoavestirme.AprendoAVestirmeLeccionActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name=".activities.aprendoavestirme.AprendoAVestirmePreguntasActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+    </application>
+
+</manifest>

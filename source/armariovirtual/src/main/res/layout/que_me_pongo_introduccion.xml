@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPantalla">
+
+    <include
+        android:id="@+id/baseLayoutQMPIntroduccion"
+        layout="@layout/base_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloQMPIntroduccion"
+        style="@style/TextoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_qmp_introduccion"
+        app:layout_constraintLeft_toRightOf="@id/btn_atras_config"
+        app:layout_constraintRight_toLeftOf="@id/btn_sonido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoQMPIntroduccion"
+        style="@style/TextoSubtitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_top_cuerpo_activity"
+        android:gravity="center"
+        android:text="@string/texto_qmp_introduccion"
+        app:layout_constraintLeft_toLeftOf="@id/tituloQMPIntroduccion"
+        app:layout_constraintRight_toRightOf="@id/tituloQMPIntroduccion"
+        app:layout_constraintTop_toBottomOf="@+id/tituloQMPIntroduccion" />
+
+    <ar.uba.fi.armariovirtual.utils.BotonSombra
+        android:id="@+id/comenzar_btn"
+        style="@style/BotonMediano"
+        android:text="@string/boton_qmp_comenzar"
+        app:layout_constraintBottom_toTopOf="@id/btn_ayuda"
+        app:layout_constraintEnd_toStartOf="@id/btn_info"
+        app:layout_constraintStart_toEndOf="@id/btn_ayuda"
+        app:layout_constraintTop_toBottomOf="@+id/textoQMPIntroduccion" />
+
+</android.support.constraint.ConstraintLayout>

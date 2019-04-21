@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">Armario Virtual</string>
+
+    <!-- TAGS PARA LAYOUTS -->
+    <string name="tag_opcion">opcion</string>
+
+    <!-- CREAR / EDITAR PRENDA -->
+    <string name="texto_clasificacion_vacia">[NO DEFINIDO]</string>
+
+    <!-- CLASIFICACIONES -->
+    <string name="clasificacion_momento_del_dia_nombre">MOMENTO DEL DÍA</string>
+    <string name="clasificacion_momento_del_dia_pregunta">¿PARA QUÉ MOMENTO DEL DÍA?</string>
+    <string name="clasificacion_momento_del_dia_opcion_dia">DÍA </string>
+    <string name="clasificacion_momento_del_dia_opcion_noche">NOCHE </string>
+    <string name="clasificacion_temperatura_nombre">TEMPERATURA</string>
+    <string name="clasificacion_temperatura_pregunta">¿QUÉ TEMPERATURA?</string>
+    <string name="clasificacion_temperatura_opcion_calor">CALOR </string>
+    <string name="clasificacion_temperatura_opcion_frio">FRÍO </string>
+    <string name="clasificacion_temperatura_opcion_templado">TEMPLADO </string>
+    <string name="clasificacion_temperatura_opcion_lluvia">LLUVIA </string>
+    <string name="clasificacion_lugar_nombre">LUGAR</string>
+    <string name="clasificacion_lugar_pregunta">¿EN QUÉ LUGAR SE USA?</string>
+    <string name="clasificacion_lugar_opcion_adentro">ADENTRO </string>
+    <string name="clasificacion_lugar_opcion_afuera">AFUERA </string>
+    <string name="clasificacion_utilidad_nombre">UTILIDAD</string>
+    <string name="clasificacion_utilidad_pregunta">¿PARA QUÉ SE USA?</string>
+    <string name="clasificacion_utilidad_opcion_casa">CASA </string>
+    <string name="clasificacion_utilidad_opcion_escuela">ESCUELA </string>
+    <string name="clasificacion_utilidad_opcion_trabajo">TRABAJO </string>
+    <string name="clasificacion_utilidad_opcion_deporte">DEPORTE </string>
+    <string name="clasificacion_utilidad_opcion_fiesta">FIESTA </string>
+
+    <!-- CONFIGURACION -->
+    <string name="funcionalidad_editar_clasificaciones">EDITAR CLASIFICACIONES</string>
+    <string name="funcionalidad_editar_prendas">EDITAR PRENDAS</string>
+    <string name="funcionalidad_editar_conjuntos">EDITAR CONJUNTOS</string>
+    <string name="funcionalidad_eliminar_prendas">ELIMINAR PRENDAS</string>
+    <string name="funcionalidad_eliminar_conjuntos">ELIMINAR CONJUNTOS</string>
+
+    <!-- BOTONES -->
+    <string name="boton_guardar_nuevo">CREAR</string>
+    <string name="boton_guardar_cambios">GUARDAR</string>
+    <string name="boton_cancelar">CANCELAR</string>
+    <string name="boton_eliminar">ELIMINAR</string>
+    <string name="boton_nueva">NUEVA</string>
+    <string name="boton_clasificaciones">CLASIFICAR</string>
+    <string name="boton_agregar_prenda">PRENDA</string>
+    <string name="boton_volver">VOLVER</string>
+
+    <string name="boton_nuevo_evento">NUEVO EVENTO</string>
+    <string name="boton_seleccionar_conjunto">SELECCIONAR CONJUNTO</string>
+    <string name="boton_cambiar_conjunto">CAMBIAR CONJUNTO</string>
+    <string name="evento_sin_notificacion">NO HAY NOTIFICACIONES</string>
+    <string name="cerrar">CERRAR</string>
+    <string name="boton_seleccionar">SELECCIONAR</string>
+
+    <!-- MENU -->
+    <string name="boton_aprendo">APRENDO A VESTIRME</string>
+    <string name="boton_vestuario">VESTUARIO</string>
+    <string name="boton_calendario">CALENDARIO</string>
+    <string name="boton_que_pongo">¿QUÉ ME PONGO?</string>
+
+
+    <!-- TEXTOS -->
+
+    <string name="titulo_menu">ARMARIO VIRTUAL</string>
+
+    <string name="titulo_aprendo_vestirme">APRENDO A VESTIRME</string>
+    <string name="texto_aprendo_vestirme">TOCA EL VIDEO PARA QUE COMIENCE</string>
+
+    <string name="titulo_calendario">CALENDARIO</string>
+    <string name="texto_calendario">TOCA UNA FECHA PARA VER Y AGREGAR UN EVENTO.\nLAS FECHAS CON EL PUNTO DE COLOR YA TIENEN EVENTOS GUARDADOS</string>
+
+    <string name="subtitulo_fecha_sin_eventos">NO HAY EVENTOS CREADOS PARA EL DÍA %1$s</string>
+    <string name="subtitulo_fecha_con_eventos">EVENTOS DEL DÍA %1$s</string>
+    <string name="titulo_detalle_fecha">EVENTOS</string>
+    <string name="dialogo_borrar_evento_titulo">ELIMINAR EVENTO</string>
+    <string name="dialogo_borrar_evento_texto">¿ESTÁS SEGURO DE QUE DESEAS ELIMINAR ESTE EVENTO?</string>
+
+    <string name="dialogo_borrar_prenda_titulo">ELIMINAR PRENDA</string>
+    <string name="dialogo_borrar_prenda_texto">¿ESTÁS SEGURO DE QUE DESEAS ELIMINAR ESTA PRENDA?</string>
+
+    <string name="dialogo_borrar_conjunto_titulo">ELIMINAR CONJUNTO</string>
+    <string name="dialogo_borrar_conjunto_texto">¿ESTÁS SEGURO DE QUE DESEAS ELIMINAR ESTE CONJUNTO?</string>
+
+    <string name="dialogo_borrar_prenda_de_conjunto_titulo">QUITAR PRENDA DE CONJUNTO</string>
+    <string name="dialogo_borrar_prenda_de_conjunto_texto">¿ESTÁS SEGURO DE QUE DESEAS QUITAR ESTA PRENDA DEL CONJUNTO?</string>
+
+    <string name="dialogo_borrar_opcion_clasificacion_titulo">ELIMINAR OPCIÓN</string>
+    <string name="dialogo_borrar_opcion_clasificacion_texto">¿ESTÁS SEGURO DE QUE DESEAS ELIMINAR ESTA OPCIÓN? SE QUITARÁ LA CLASIFICACIÓN A TODAS LAS PRENDAS ASOCIADAS</string>
+
+    <string name="dialogo_borrar_clasificacion_titulo">ELIMINAR CLASIFICACIÓN</string>
+    <string name="dialogo_borrar_clasificacion_texto">¿ESTÁS SEGURO DE QUE DESEAS ELIMINAR ESTA CLASIFICACIÓN? SE QUITARA LA CLASIFICACIÓN A TODAS LAS PRENDAS ASOCIADAS</string>
+
+    <string name="dialogo_salir_cambios_titulo">SALIR</string>
+    <string name="dialogo_salir_cambios_texto">¿ESTÁS SEGURO DE QUE DESEAS SALIR? SI TIENES CAMBIOS SIN GUARDAR, SE PERDERÁN</string>
+
+    <string name="dialogo_notificacion_titulo">¿CUÁNDO QUIERES RECIBIR LA NOTIFICACIÓN</string>
+
+    <string name="titulo_detalle_evento_nuevo">NUEVO EVENTO</string>
+    <string name="titulo_detalle_evento_editar">EDITAR EVENTO</string>
+
+    <string name="titulo_detalle_prenda_nueva">NUEVA PRENDA</string>
+    <string name="titulo_detalle_prenda_editar">EDITAR PRENDA</string>
+
+    <string name="titulo_detalle_conjunto_nuevo">NUEVO CONJUNTO</string>
+    <string name="titulo_detalle_conjunto_editar">EDITAR CONJUNTO</string>
+
+    <string name="error_notificacion">NO SE PODRÁ MOSTRAR UN RECORDATORIO PARA ESTE EVENTO</string>
+
+    <string name="titulo_filtros">FILTROS</string>
+    <string name="titulo_clasificaciones">CLASIFICACIONES</string>
+    <string name="titulo_configuracion">CONFIGURACIÓN</string>
+    <string name="titulo_seguridad">PROTECCIÓN</string>
+    <string name="subtitulo_seguridad">SELECCIONA LAS TAREAS QUE DESEAS PROTEGER CON EL INGRESO DEL PIN DE SEGURIDAD</string>
+
+    <string name="boton_cambiar_pin">CAMBIAR PIN DE SEGURIDAD</string>
+    <string name="boton_editar_clasificaciones">EDITAR CLASIFICACIONES</string>
+    <string name="boton_seguridad">CONFIGURAR SEGURIDAD</string>
+
+    <string name="titulo_qmp_introduccion">¿QUÉ ME PONGO?</string>
+    <string name="texto_qmp_introduccion">¡VAMOS A BUSCAR QUÉ ROPA PODÉS USAR HOY!\n\nRESPONDÉ LAS PREGUNTAS ASÍ ENCONTRAMOS LAS MEJORES OPCIONES</string>
+    <string name="boton_qmp_comenzar">EMPEZAR</string>
+    <string name="boton_qmp_repetir">OTRA VEZ</string>
+    <string name="boton_qmp_vacio_continuar">CONTINUAR</string>
+    <string name="boton_qmp_salir">SALIR</string>
+    <string name="clasificacion_qmp_indistinto">INDISTINTO</string>
+    <string name="clasificacion_qmp_no_se">NO SÉ</string>
+    <string name="titulo_qmp_resultado">ENCONTRAMOS ESTAS OPCIONES:</string>
+    <string name="titulo_qmp_resultado_vacio">NO ENCONTRAMOS CONJUNTOS PARA\nLAS OPCIONES ELEGIDAS</string>
+
+    <string name="titulo_qmp_preguntas">PREGUNTAS</string>
+
+    <string name="vestuario_btn_prendas">PRENDAS</string>
+    <string name="vestuario_btn_conjuntos">CONJUNTOS</string>
+
+    <!-- HINTS -->
+    <string name="hint_nombre_evento">ESCRIBE EL NOMBRE AQUÍ</string>
+    <string name="hint_nombre_clasificacion">NOMBRE DE LA CLASIFICACION</string>
+    <string name="hint_pregunta_clasificacion">PREGUNTA ASOCIADA A LA CLASIFICACION</string>
+
+
+    <string-array name="array_horas">
+        <item>00:00</item>
+        <item>00:30</item>
+        <item>01:00</item>
+        <item>01:30</item>
+        <item>02:00</item>
+        <item>02:30</item>
+        <item>03:00</item>
+        <item>03:30</item>
+        <item>04:00</item>
+        <item>04:30</item>
+        <item>05:00</item>
+        <item>05:30</item>
+        <item>06:00</item>
+        <item>06:30</item>
+        <item>07:00</item>
+        <item>07:30</item>
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>13:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>14:30</item>
+        <item>15:00</item>
+        <item>15:30</item>
+        <item>16:00</item>
+        <item>16:30</item>
+        <item>17:00</item>
+        <item>17:30</item>
+        <item>18:00</item>
+        <item>18:30</item>
+        <item>19:00</item>
+        <item>19:30</item>
+        <item>20:00</item>
+        <item>20:30</item>
+        <item>21:00</item>
+        <item>21:30</item>
+        <item>22:00</item>
+        <item>22:30</item>
+        <item>23:00</item>
+        <item>23:30</item>
+    </string-array>
+
+</resources>
