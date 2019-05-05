@@ -1,7 +1,6 @@
 package app;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.Calendar;
 import java.util.List;
@@ -34,14 +33,14 @@ public class InicializacionBD {
     private static String opcionTrabajo;
     private static String opcionFiesta;
 
-    public static void setUpConfiguracion(Context contexto) {
+    static void setUpConfiguracion(Context contexto) {
 
         FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_editar_clasificaciones), true, false);
 
-        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_editar_prendas),true, true);
-        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_eliminar_prendas),true, true);
-        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_editar_conjuntos),true, true);
-        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_eliminar_conjuntos),true, true);
+        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_editar_prendas), true, true);
+        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_eliminar_prendas), true, true);
+        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_editar_conjuntos), true, true);
+        FuncionalidadProtegible.obtenerOCrear(contexto.getResources().getString(R.string.funcionalidad_eliminar_conjuntos), true, true);
 
     }
 
@@ -124,7 +123,7 @@ public class InicializacionBD {
             boolean esZombie = false;
             List<Prenda> prendasAsociadas = clasificacion.obtenerRelaciones(Prenda.class);
             List<Conjunto> conjuntosAsociados = clasificacion.obtenerRelaciones(Conjunto.class);
-            if ( (prendasAsociadas == null || prendasAsociadas.size() == 0) && (conjuntosAsociados == null || conjuntosAsociados.size() == 0) ) {
+            if ((prendasAsociadas == null || prendasAsociadas.size() == 0) && (conjuntosAsociados == null || conjuntosAsociados.size() == 0)) {
                 // Clasificación "zombie". Eliminarla junto con todas sus opciones
                 clasificacion.quitarTodasLasOpcionesElegidas();
                 clasificacion.delete();
@@ -135,8 +134,11 @@ public class InicializacionBD {
     /**
      * Dar de alta prendas y conjuntos por defecto
      */
-    public static void crearDatosPorDefecto(Context contexto) {
-        // TODO: Agregar imágenes
+    static void crearDatosPorDefecto(Context contexto) {
+
+        // Si ya existen prendas no creamos prendas por defecto
+        if (!Prenda.vacia())
+            return;
 
         // =================================
         //              PRENDAS
@@ -152,8 +154,21 @@ public class InicializacionBD {
 
         Clasificacion clasificacionRemeraTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
         clasificacionRemeraTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
+        clasificacionRemeraTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionTemplado));
         remera.agregarClasificacion(clasificacionRemeraTemperatura);
 
+        Clasificacion clasificacionRemeraLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionRemeraLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionRemeraLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        remera.agregarClasificacion(clasificacionRemeraLugar);
+
+        Clasificacion clasificacionRemeraUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionRemeraUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionRemeraUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        clasificacionRemeraUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDeporte));
+        remera.agregarClasificacion(clasificacionRemeraUtilidad);
+
+        remera.setFavorito(true);
         remera.save();
 
         // Bermuda
@@ -168,22 +183,63 @@ public class InicializacionBD {
         clasificacionBermudaTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
         bermuda.agregarClasificacion(clasificacionBermudaTemperatura);
 
+        Clasificacion clasificacionBermudaLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionBermudaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionBermudaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        bermuda.agregarClasificacion(clasificacionBermudaLugar);
+
+        Clasificacion clasificacionBermudaUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionBermudaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        bermuda.agregarClasificacion(clasificacionBermudaUtilidad);
+
         bermuda.save();
 
-        // Pantalon
-        Prenda pantalon = new Prenda("PANTALON", "");
-        pantalon.setRutaImagen("file:///android_asset/prendas_precargadas/pantalon.png");
+        // Buzo
+        Prenda buzo = new Prenda("BUZO", "");
+        buzo.setRutaImagen("file:///android_asset/prendas_precargadas/buzo.png");
 
-        Clasificacion clasificacionPantalonMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
-        clasificacionPantalonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
-        clasificacionPantalonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
-        pantalon.agregarClasificacion(clasificacionPantalonMomentoDelDia);
+        Clasificacion clasificacionBuzoMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionBuzoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionBuzoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        buzo.agregarClasificacion(clasificacionBuzoMomentoDelDia);
 
-        Clasificacion clasificacionPantalonTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-        clasificacionPantalonTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
-        pantalon.agregarClasificacion(clasificacionPantalonTemperatura);
+        Clasificacion clasificacionBuzoTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionBuzoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionTemplado));
+        clasificacionBuzoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        buzo.agregarClasificacion(clasificacionBuzoTemperatura);
 
-        pantalon.save();
+        Clasificacion clasificacionBuzoLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionBuzoLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionBuzoLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        buzo.agregarClasificacion(clasificacionBuzoLugar);
+
+        Clasificacion clasificacionBuzoUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionBuzoUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionBuzoUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        clasificacionBuzoUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDeporte));
+        buzo.agregarClasificacion(clasificacionBuzoUtilidad);
+
+        buzo.save();
+
+
+        // Paraguas
+        Prenda paraguas = new Prenda("PARAGUAS", "");
+        paraguas.setRutaImagen("file:///android_asset/prendas_precargadas/paraguas.png");
+
+        Clasificacion clasificacionParaguasMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionParaguasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionParaguasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        paraguas.agregarClasificacion(clasificacionParaguasMomentoDelDia);
+
+        Clasificacion clasificacionParaguasTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionParaguasTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionLluvia));
+        paraguas.agregarClasificacion(clasificacionParaguasTemperatura);
+
+        Clasificacion clasificacionParaguasLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionParaguasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        paraguas.agregarClasificacion(clasificacionParaguasLugar);
+
+        paraguas.save();
 
         // Campera
         Prenda campera = new Prenda("CAMPERA", "");
@@ -198,52 +254,191 @@ public class InicializacionBD {
         clasificacionCamperaTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
         campera.agregarClasificacion(clasificacionCamperaTemperatura);
 
+        Clasificacion clasificacionCamperaLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionCamperaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        campera.agregarClasificacion(clasificacionCamperaLugar);
+
+        Clasificacion clasificacionCamperaUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionCamperaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        campera.agregarClasificacion(clasificacionCamperaUtilidad);
+
         campera.save();
 
-        // Corbata
-        Prenda corbata = new Prenda("CORBATA", "");
-        corbata.setRutaImagen("file:///android_asset/prendas_precargadas/corbata.png");
+        // Ojotas
+        Prenda ojotas = new Prenda("OJOTAS", "");
+        ojotas.setRutaImagen("file:///android_asset/prendas_precargadas/ojotas.png");
 
-        Clasificacion clasificacionCorbataMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
-        clasificacionCorbataMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
-        clasificacionCorbataMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
-        corbata.agregarClasificacion(clasificacionCorbataMomentoDelDia);
+        Clasificacion clasificacionOjotasMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionOjotasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        ojotas.agregarClasificacion(clasificacionOjotasMomentoDelDia);
 
-        Clasificacion clasificacionCorbataTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-        clasificacionCorbataTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
-        corbata.agregarClasificacion(clasificacionCorbataTemperatura);
+        Clasificacion clasificacionOjotasTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionOjotasTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
+        ojotas.agregarClasificacion(clasificacionOjotasTemperatura);
 
-        corbata.save();
+        Clasificacion clasificacionOjotasLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionOjotasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionOjotasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        ojotas.agregarClasificacion(clasificacionOjotasLugar);
 
-        // Cinturon
-        Prenda cinturon = new Prenda("CINTURON", "");
-        cinturon.setRutaImagen("file:///android_asset/prendas_precargadas/cinturon.png");
+        Clasificacion clasificacionOjotasUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionOjotasUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        ojotas.agregarClasificacion(clasificacionOjotasUtilidad);
 
-        Clasificacion clasificacionCinturonMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
-        clasificacionCinturonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
-        clasificacionCinturonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
-        cinturon.agregarClasificacion(clasificacionCinturonMomentoDelDia);
+        ojotas.save();
 
-        Clasificacion clasificacionCinturonTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-        clasificacionCinturonTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
-        cinturon.agregarClasificacion(clasificacionCinturonTemperatura);
+        // Chomba
+        Prenda chomba = new Prenda("CHOMBA", "");
+        chomba.setRutaImagen("file:///android_asset/prendas_precargadas/chomba.png");
 
-        cinturon.save();
+        Clasificacion clasificacionChombaMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionChombaMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionChombaMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        chomba.agregarClasificacion(clasificacionChombaMomentoDelDia);
 
-        Prenda vestido = new Prenda("VESTIDO", "");
-        vestido.setRutaImagen("file:///android_asset/prendas_precargadas/vestido.png");
+        Clasificacion clasificacionChombaTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionChombaTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        chomba.agregarClasificacion(clasificacionChombaTemperatura);
 
-        Clasificacion clasificacionVestidoMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
-        clasificacionVestidoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
-        clasificacionVestidoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
-        vestido.agregarClasificacion(clasificacionVestidoMomentoDelDia);
+        Clasificacion clasificacionChombaLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionChombaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionChombaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        chomba.agregarClasificacion(clasificacionChombaLugar);
 
-        Clasificacion clasificacionVestidoTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-        clasificacionVestidoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
-        vestido.agregarClasificacion(clasificacionVestidoTemperatura);
+        Clasificacion clasificacionChombaUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionChombaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionChombaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        chomba.agregarClasificacion(clasificacionChombaUtilidad);
 
-        vestido.save();
+        chomba.save();
 
+        // Jean
+        Prenda jean = new Prenda("JEAN", "");
+        jean.setRutaImagen("file:///android_asset/prendas_precargadas/jean.jpeg");
+
+        Clasificacion clasificacionJeanMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionJeanMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionJeanMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        jean.agregarClasificacion(clasificacionJeanMomentoDelDia);
+
+        Clasificacion clasificacionJeanTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionJeanTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        clasificacionJeanTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionTemplado));
+        jean.agregarClasificacion(clasificacionJeanTemperatura);
+
+        Clasificacion clasificacionJeanLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionJeanLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionJeanLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        jean.agregarClasificacion(clasificacionJeanLugar);
+
+        Clasificacion clasificacionJeanUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionJeanUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionJeanUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        jean.agregarClasificacion(clasificacionJeanUtilidad);
+
+        jean.save();
+
+        // Medias
+        Prenda medias = new Prenda("MEDIAS", "");
+        medias.setRutaImagen("file:///android_asset/prendas_precargadas/medias.png");
+
+        Clasificacion clasificacionMediasMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionMediasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionMediasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        medias.agregarClasificacion(clasificacionMediasMomentoDelDia);
+
+        Clasificacion clasificacionMediasTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionMediasTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        medias.agregarClasificacion(clasificacionMediasTemperatura);
+
+        Clasificacion clasificacionMediasLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionMediasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionMediasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        medias.agregarClasificacion(clasificacionMediasLugar);
+
+        Clasificacion clasificacionMediasUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionMediasUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionMediasUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        clasificacionMediasUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDeporte));
+        medias.agregarClasificacion(clasificacionMediasUtilidad);
+
+        medias.save();
+
+        // Pantalon
+        Prenda pantalon = new Prenda("PANTALON", "");
+        pantalon.setRutaImagen("file:///android_asset/prendas_precargadas/pantalon.png");
+
+        Clasificacion clasificacionPantalonMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionPantalonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionPantalonMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        pantalon.agregarClasificacion(clasificacionPantalonMomentoDelDia);
+
+        Clasificacion clasificacionPantalonTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionPantalonTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionTemplado));
+        pantalon.agregarClasificacion(clasificacionPantalonTemperatura);
+
+        Clasificacion clasificacionPantalonLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionPantalonLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionPantalonLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        pantalon.agregarClasificacion(clasificacionPantalonLugar);
+
+        Clasificacion clasificacionPantalonUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionPantalonUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionPantalonUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        pantalon.agregarClasificacion(clasificacionPantalonUtilidad);
+
+        pantalon.save();
+
+
+        // Remera manga larga
+        Prenda remeraLarga = new Prenda("REMERA MANGA LARGA", "");
+        remeraLarga.setRutaImagen("file:///android_asset/prendas_precargadas/remera_larga.png");
+
+        Clasificacion clasificacionRemeraLargaMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionRemeraLargaMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionRemeraLargaMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        remeraLarga.agregarClasificacion(clasificacionRemeraLargaMomentoDelDia);
+
+        Clasificacion clasificacionRemeraLargaTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionRemeraLargaTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        remeraLarga.agregarClasificacion(clasificacionRemeraLargaTemperatura);
+
+        Clasificacion clasificacionRemeraLargaLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionRemeraLargaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        clasificacionRemeraLargaLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAdentro));
+        remeraLarga.agregarClasificacion(clasificacionRemeraLargaLugar);
+
+        Clasificacion clasificacionRemeraLargaUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionRemeraLargaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCasa));
+        clasificacionRemeraLargaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        clasificacionRemeraLargaUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDeporte));
+        remeraLarga.agregarClasificacion(clasificacionRemeraLargaUtilidad);
+
+        remeraLarga.save();
+
+        // Zapatillas
+        Prenda zapatillas = new Prenda("ZAPATILLAS", "");
+        zapatillas.setRutaImagen("file:///android_asset/prendas_precargadas/zapatillas.png");
+
+        Clasificacion clasificacionZapatillasMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionZapatillasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionZapatillasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        zapatillas.agregarClasificacion(clasificacionZapatillasMomentoDelDia);
+
+        Clasificacion clasificacionZapatillasTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionZapatillasTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
+        zapatillas.agregarClasificacion(clasificacionZapatillasTemperatura);
+
+        Clasificacion clasificacionZapatillasLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionZapatillasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        zapatillas.agregarClasificacion(clasificacionZapatillasLugar);
+
+        Clasificacion clasificacionZapatillasUtilidad = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_utilidad_nombre)));
+        clasificacionZapatillasUtilidad.agregarOpcionElegida(OpcionClasificacion.obtener(opcionEscuela));
+        zapatillas.agregarClasificacion(clasificacionZapatillasUtilidad);
+
+        zapatillas.setFavorito(true);
+        zapatillas.save();
 
         // =================================
         //          CONJUNTOS
@@ -251,8 +446,13 @@ public class InicializacionBD {
 
         // Verano
         Conjunto conjuntoVerano = new Conjunto("VERANO");
-        conjuntoVerano.agregarPrenda(remera);
+        conjuntoVerano.agregarPrenda(ojotas);
         conjuntoVerano.agregarPrenda(bermuda);
+        conjuntoVerano.agregarPrenda(remera);
+
+        Clasificacion clasificacionConjuntoVeranoMomentoDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionConjuntoVeranoMomentoDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        conjuntoVerano.agregarClasificacion(clasificacionConjuntoVeranoMomentoDia);
 
         Clasificacion clasificacionConjuntoVeranoTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
         clasificacionConjuntoVeranoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
@@ -262,47 +462,23 @@ public class InicializacionBD {
 
         // Invierno
         Conjunto conjuntoInvierno = new Conjunto("INVIERNO");
-        conjuntoInvierno.agregarPrenda(pantalon);
+        conjuntoInvierno.agregarPrenda(zapatillas);
+        conjuntoInvierno.agregarPrenda(buzo);
+        conjuntoInvierno.agregarPrenda(jean);
+        conjuntoInvierno.agregarPrenda(medias);
         conjuntoInvierno.agregarPrenda(campera);
+        conjuntoInvierno.agregarPrenda(remeraLarga);
 
         Clasificacion clasificacionConjuntoInviernoTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
         clasificacionConjuntoInviernoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
         conjuntoInvierno.agregarClasificacion(clasificacionConjuntoInviernoTemperatura);
 
+        Clasificacion clasificacionConjuntoInviernoMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionConjuntoInviernoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionConjuntoInviernoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        conjuntoInvierno.agregarClasificacion(clasificacionConjuntoInviernoMomentoDelDia);
+
         conjuntoInvierno.save();
-
-        // Completo
-        Conjunto conjuntoCompleto = new Conjunto("COMPLETO");
-        conjuntoCompleto.agregarPrenda(remera);
-        conjuntoCompleto.agregarPrenda(bermuda);
-        conjuntoCompleto.agregarPrenda(pantalon);
-        conjuntoCompleto.agregarPrenda(campera);
-
-        Clasificacion clasificacionConjuntoCompletoTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-        clasificacionConjuntoCompletoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionFrio));
-        clasificacionConjuntoCompletoTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
-        conjuntoCompleto.agregarClasificacion(clasificacionConjuntoCompletoTemperatura);
-
-        Clasificacion clasificacionConjuntoCompletoMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
-        clasificacionConjuntoCompletoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
-        clasificacionConjuntoCompletoMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
-        conjuntoCompleto.agregarClasificacion(clasificacionConjuntoCompletoMomentoDelDia);
-
-        conjuntoCompleto.save();
-
-        for (int i = 0; i < 10; i++) {
-            // Conjunto placeholder
-            Conjunto conjuntoPlaceholder = new Conjunto("CONJUNTO " + (i + 1));
-            conjuntoPlaceholder.agregarPrenda(remera);
-            conjuntoPlaceholder.agregarPrenda(bermuda);
-
-            Clasificacion clasificacionConjuntoPlaceholderemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
-            clasificacionConjuntoPlaceholderemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionCalor));
-            conjuntoPlaceholder.agregarClasificacion(clasificacionConjuntoPlaceholderemperatura);
-
-            conjuntoPlaceholder.save();
-        }
-
 
         actualizarImagenesConjuntos(); // En un método aparte porque tiene que ejecutarse asíncrono y en serie
 
@@ -311,32 +487,29 @@ public class InicializacionBD {
         //          EVENTOS
         // =================================
 
-        // Navidad
+        // Cumpleaños
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
-        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.HOUR_OF_DAY, 15);
+        calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.YEAR, 2018);
-        calendar.set(Calendar.MONTH, Calendar.DECEMBER);
-        calendar.set(Calendar.DATE, 24);
-        EventoCalendario navidad = new EventoCalendario(calendar.getTime(), conjuntoVerano, "NAVIDAD");
-        navidad.save();
+        calendar.set(Calendar.YEAR, 2019);
+        calendar.set(Calendar.MONTH, Calendar.MAY);
+        calendar.set(Calendar.DATE, 25);
+        EventoCalendario cumple = new EventoCalendario(calendar.getTime(), conjuntoVerano, "CUMPLEAÑOS ALFREDO");
+        cumple.save();
     }
 
     private static void actualizarImagenesConjuntos() {
 
-        Log.d("[CONJUNTO]", "InicializacionDB - actualizarImagenesConjuntos");
         List<Conjunto> conjuntos = ObjetoPersistente.listarTodos(Conjunto.class);
 
         for (int i = 0; i < conjuntos.size(); i++) {
             Conjunto conjunto = conjuntos.get(i);
-            Log.d("[CONJUNTO]", "InicializacionDB - Conjunto [" + conjunto.getId() + "].rutaImagen: " + conjunto.getRutaImagen());
             if (conjunto.getRutaImagen() == null) {
                 // Imagen no generada
                 conjunto.actualizarImagen(new ICallback() {
                     @Override
                     public void onSuccess() {
-                        Log.d("[CONJUNTO]", "actualizarImagen.onSuccess callback");
                         actualizarImagenesConjuntos();
                     }
                 });

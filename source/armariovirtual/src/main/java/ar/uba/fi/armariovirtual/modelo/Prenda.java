@@ -125,4 +125,9 @@ public class Prenda extends Clasificable implements Comparable<Prenda> {
             return -1;
         else return 1;
     }
+
+    public static boolean vacia() {
+        Prenda primera = first(Prenda.class);
+        return primera == null;
+    }
 }

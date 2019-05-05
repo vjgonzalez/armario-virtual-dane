@@ -66,21 +66,6 @@ public class AjustesDesarrolloActivity extends BarraBaseActivity {
             }
         });
 
-        (findViewById(R.id.crear_datos_por_defecto_btn)).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                new AlertDialog.Builder(AjustesDesarrolloActivity.this)
-                        .setTitle("CREAR DATOS")
-                        .setMessage("CREAR DATOS POR DEFECTO?")
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                InicializacionBD.crearDatosPorDefecto(getApplicationContext());
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, null).show();
-            }
-        });
         setUpBarraConBotonDeAtras(true, false, new Intent(AjustesDesarrolloActivity.this, ConfiguracionActivity.class));
     }
 
