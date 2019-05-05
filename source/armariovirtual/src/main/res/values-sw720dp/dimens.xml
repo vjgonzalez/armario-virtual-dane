@@ -12,6 +12,8 @@
     <dimen name="ancho_boton_menu_principal">280dp</dimen>
     <dimen name="alto_boton_menu_principal">220dp</dimen>
 
+    <dimen name="boton_menu_padding_v">10dp</dimen>
+
     <dimen name="margen_vertical_boton">12dp</dimen>
 
     <dimen name="ancho_boton_configuracion">280dp</dimen>

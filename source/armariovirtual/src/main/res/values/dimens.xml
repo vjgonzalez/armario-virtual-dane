@@ -94,9 +94,8 @@
     <dimen name="margen_h_form">16dp</dimen>
     <dimen name="margen_v_form">8dp</dimen>
 
-    <dimen name="boton_padding">8dp</dimen>
-    <dimen name="boton_menu_padding_right">10dp</dimen>
-    <dimen name="boton_menu_padding_left">10dp</dimen>
+    <dimen name="boton_menu_padding_v">6dp</dimen>
+    <dimen name="boton_padding_h">10dp</dimen>
     <dimen name="margen_botones_menu">15dp</dimen>
     <dimen name="texto_botones_menu">15dp</dimen>
     <dimen name="texto_botones_menu_config">15dp</dimen>

@@ -32,8 +32,8 @@
         <item name="android:layout_width">@dimen/ancho_boton</item>
         <item name="android:layout_marginLeft">@dimen/margen_horizontal_boton</item>
         <item name="android:layout_marginRight">@dimen/margen_horizontal_boton</item>
-        <item name="android:paddingLeft">@dimen/boton_menu_padding_left</item>
-        <item name="android:paddingRight">@dimen/boton_menu_padding_right</item>
+        <item name="android:paddingLeft">@dimen/boton_padding_h</item>
+        <item name="android:paddingRight">@dimen/boton_padding_h</item>
     </style>
 
     <style name="BotonMenu" parent="BotonPadre">
@@ -42,10 +42,10 @@
         <item name="android:layout_width">@dimen/ancho_boton_menu_principal</item>
         <item name="android:textSize">@dimen/texto_botones_menu</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:paddingTop">@dimen/boton_padding</item>
-        <item name="android:paddingBottom">@dimen/boton_padding</item>
-        <item name="android:paddingLeft">@dimen/boton_menu_padding_left</item>
-        <item name="android:paddingRight">@dimen/boton_menu_padding_right</item>
+        <item name="android:paddingTop">@dimen/boton_menu_padding_v</item>
+        <item name="android:paddingBottom">@dimen/boton_menu_padding_v</item>
+        <item name="android:paddingLeft">@dimen/boton_padding_h</item>
+        <item name="android:paddingRight">@dimen/boton_padding_h</item>
     </style>
 
     <style name="BotonMediano" parent="BotonMenu">

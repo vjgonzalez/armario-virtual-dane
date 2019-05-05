@@ -56,7 +56,7 @@
     <dimen name="margen_calendario">30dp</dimen>
     <dimen name="icono_evento">35dp</dimen>
 
-    <dimen name="boton_padding">12dp</dimen>
+    <dimen name="boton_menu_padding_v">6dp</dimen>
 
     <dimen name="texto_etiqueta_form">24dp</dimen>
     <dimen name="margen_h_form">25dp</dimen>

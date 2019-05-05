@@ -52,7 +52,7 @@
             <ar.uba.fi.armariovirtual.utils.BotonSombra
                 android:id="@+id/aprendo_a_vestirme_btn"
                 style="@style/BotonMenu"
-                android:drawableTop="@drawable/que_me_pongo"
+                android:drawableTop="@drawable/aprendo"
                 android:text="@string/boton_aprendo"
                 app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
                 app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
