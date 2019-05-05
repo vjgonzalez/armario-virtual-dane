@@ -136,6 +136,10 @@ public class InicializacionBD {
      */
     static void crearDatosPorDefecto(Context contexto) {
 
+        // Si ya existen prendas no creamos prendas por defecto
+        if (!Prenda.vacia())
+            return;
+
         // =================================
         //              PRENDAS
         // =================================
@@ -216,6 +220,26 @@ public class InicializacionBD {
         buzo.agregarClasificacion(clasificacionBuzoUtilidad);
 
         buzo.save();
+
+
+        // Paraguas
+        Prenda paraguas = new Prenda("PARAGUAS", "");
+        paraguas.setRutaImagen("file:///android_asset/prendas_precargadas/paraguas.png");
+
+        Clasificacion clasificacionParaguasMomentoDelDia = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_momento_del_dia_nombre)));
+        clasificacionParaguasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionDia));
+        clasificacionParaguasMomentoDelDia.agregarOpcionElegida(OpcionClasificacion.obtener(opcionNoche));
+        paraguas.agregarClasificacion(clasificacionParaguasMomentoDelDia);
+
+        Clasificacion clasificacionParaguasTemperatura = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_temperatura_nombre)));
+        clasificacionParaguasTemperatura.agregarOpcionElegida(OpcionClasificacion.obtener(opcionLluvia));
+        paraguas.agregarClasificacion(clasificacionParaguasTemperatura);
+
+        Clasificacion clasificacionParaguasLugar = new Clasificacion(DefinicionClasificacion.obtener(contexto.getResources().getString(R.string.clasificacion_lugar_nombre)));
+        clasificacionParaguasLugar.agregarOpcionElegida(OpcionClasificacion.obtener(opcionAfuera));
+        paraguas.agregarClasificacion(clasificacionParaguasLugar);
+
+        paraguas.save();
 
         // Campera
         Prenda campera = new Prenda("CAMPERA", "");

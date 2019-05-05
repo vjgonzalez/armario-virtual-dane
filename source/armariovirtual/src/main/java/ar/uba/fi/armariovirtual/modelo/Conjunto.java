@@ -80,8 +80,6 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
 
     public void actualizarImagen(final ICallback callback) {
 
-        Log.d("[CONJUNTO]", "Actualizando imagen conjunto " + getId() + " - callback: " + callback);
-
         List<Prenda> prendas = obtenerPrendas();
 
         final Bitmap[] bitmaps = new Bitmap[prendas.size()];
@@ -94,7 +92,6 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
                         .into(new TargetPersistente() {
                             @Override
                             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                                Log.i("[CONJUNTO]", "onBitmapLoaded [" + bitmapIdx + "]");
                                 bitmaps[bitmapIdx] = bitmap;
                                 // Si es la última imagen cargada, creaer el bmp final y mostrarlo
                                 for (Bitmap bitmap1 : bitmaps) {
@@ -110,13 +107,11 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
 
                             @Override
                             public void onBitmapFailed(Drawable errorDrawable) {
-                                Log.e("[CONJUNTO]", "Error al cargar imagen de prenda [" + bitmapIdx + "]");
                                 finalizar();
                             }
 
                             @Override
                             public void onPrepareLoad(Drawable placeHolderDrawable) {
-                                Log.i("[CONJUNTO]", "Preparando carga de imagen [" + bitmapIdx + "]");
                             }
                         });
             }
@@ -124,7 +119,6 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
     }
 
     private void guardarImagen(Bitmap imagen) {
-        Log.d("[CONJUNTO]", "Guardar imagen conjunto " + getId());
 
         String subcarpeta = "conjuntos";
         String nombreImagen = "conjunto_" + getId().toString();
@@ -134,12 +128,10 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
             FileAndImageUtils.guardarBitmapEnFile(imagen, archivoImagen);
             String rutaImagen = Uri.fromFile(archivoImagen).toString();
             Picasso.with(ArmarioVirtualApplication.getAppContext()).invalidate(rutaImagen);
-            Log.d("[CONJUNTO]", "Set ruta imagen: " + rutaImagen);
             setRutaImagen(rutaImagen);
             save();
             archivoImagen = null;
         } catch (IOException err) {
-            Log.d("msg", "Uri: " + err.getMessage());
         }
     }
 
@@ -153,12 +145,10 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
 
     @Override
     public boolean delete() {
-        Log.d("DANE", "Borrando Conjunto");
 
         // Eliminar clasificaciones relacionadas
         List<Clasificacion> clasificacionesAsociadas = obtenerRelaciones(Clasificacion.class);
         for (Clasificacion clasificacion : clasificacionesAsociadas) {
-            Log.d("DANE", "Borrando Clasificacion");
             quitarClasificacion(clasificacion);
             clasificacion.quitarTodasLasOpcionesElegidas();
             clasificacion.delete();
@@ -172,7 +162,6 @@ public class Conjunto extends Clasificable implements Comparable<Conjunto> {
         List<EventoCalendario> eventos = ObjetoPersistente.listarTodos(EventoCalendario.class);
         for (EventoCalendario evento : eventos) {
             if (evento.getConjunto() != null && evento.getConjunto().getId().equals(this.getId())) {
-                Log.d("DANE", "Borrando Evento");
                 evento.delete();
             }
         }

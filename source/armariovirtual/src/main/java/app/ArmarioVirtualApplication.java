@@ -17,14 +17,10 @@ public class ArmarioVirtualApplication extends DaneApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        SharedPreferences sharedPreferences = obtenerSharedPreferences(PREF_INICIALIZACION);
+        applicationContext = this;
+
         InicializacionBD.setUpModelo(getApplicationContext());
         InicializacionBD.setUpConfiguracion(getApplicationContext());
-
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(CODIGO_INICIALIZADO, true);
-        editor.apply();
-        applicationContext = this;
 
         // Eliminar esta línea si no se desea crear prendas y conjuntos por defecto
         InicializacionBD.crearDatosPorDefecto(getApplicationContext());
