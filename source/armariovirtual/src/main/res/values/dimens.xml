@@ -132,7 +132,7 @@
 
     <dimen name="vestuario_grilla_column_width">165dp</dimen>
 
-    <dimen name="espacio_entre_items_grilla">10dp</dimen>
+    <dimen name="espacio_entre_items_grilla">8dp</dimen>
 
     <dimen name="aav_lecciones_grilla_column_width">180dp</dimen>
 
@@ -148,10 +148,10 @@
     <dimen name="aav_alto_boton_sig_leccion">50dp</dimen>
     <dimen name="aav_margen_horizontal_boton_sig_leccion">25dp</dimen>
     <dimen name="aav_texto_pregunta">25dp</dimen>
-    <dimen name="aav_alto_opcion">45dp</dimen>
-    <dimen name="aav_ancho_opcion">140dp</dimen>
+    <dimen name="aav_alto_opcion">50dp</dimen>
+    <dimen name="aav_ancho_opcion">145dp</dimen>
     <dimen name="aav_preguntas_grilla_column_width">180dp</dimen>
-    <dimen name="aav_texto_opciones">18dp</dimen>
+    <dimen name="aav_texto_opciones">16dp</dimen>
 
     <dimen name="boton_redondo">60dp</dimen>
     <dimen name="padding_boton_redondo">10dp</dimen>

@@ -86,10 +86,10 @@
     <dimen name="aav_alto_imagen_leccion_item_grilla">220dp</dimen>
     <dimen name="aav_ancho_boton_sig_leccion">80dp</dimen>
     <dimen name="aav_alto_boton_sig_leccion">80dp</dimen>
-    <dimen name="aav_alto_opcion">85dp</dimen>
-    <dimen name="aav_ancho_opcion">220dp</dimen>
-    <dimen name="aav_preguntas_grilla_column_width">360dp</dimen>
-    <dimen name="aav_texto_opciones">28dp</dimen>
+    <dimen name="aav_alto_opcion">95dp</dimen>
+    <dimen name="aav_ancho_opcion">280dp</dimen>
+    <dimen name="aav_preguntas_grilla_column_width">390dp</dimen>
+    <dimen name="aav_texto_opciones">35dp</dimen>
 
     <dimen name="boton_redondo">100dp</dimen>
     <dimen name="padding_boton_redondo">20dp</dimen>
