@@ -20,10 +20,14 @@ public class ArmarioVirtualApplication extends DaneApplication {
         SharedPreferences sharedPreferences = obtenerSharedPreferences(PREF_INICIALIZACION);
         InicializacionBD.setUpModelo(getApplicationContext());
         InicializacionBD.setUpConfiguracion(getApplicationContext());
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(CODIGO_INICIALIZADO, true);
-        editor.commit();
+        editor.apply();
         applicationContext = this;
+
+        // Eliminar esta línea si no se desea crear prendas y conjuntos por defecto
+        InicializacionBD.crearDatosPorDefecto(getApplicationContext());
 
         int [] recursosDeAudio = setUpRecursosDeAudio();
 

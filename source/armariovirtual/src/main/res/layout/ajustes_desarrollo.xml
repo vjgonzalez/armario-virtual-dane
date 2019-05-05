@@ -74,17 +74,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/empty_db_btn"
                 app:layout_constraintVertical_chainStyle="spread" />
 
-            <ar.uba.fi.armariovirtual.utils.BotonSombra
-                android:id="@+id/crear_datos_por_defecto_btn"
-                style="@style/BotonMenu"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:text="CREAR DATOS"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sanitizar_db_btn"
-                app:layout_constraintVertical_chainStyle="spread" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
